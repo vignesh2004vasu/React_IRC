@@ -34,7 +34,7 @@ class Login extends Component {
       <div>
          
         <form onSubmit={this.reg} className="f1">
-            <h3>REGISTRATION FORM</h3>
+            <h3>REGISTRATION FORM NEW</h3>
           <input type="text" name="name" placeholder="Enter Name" id="nn" className="nameinput"/>
          
           <input type="password" name="pass" placeholder="Enter Password" id="pp" className="passinput" />
