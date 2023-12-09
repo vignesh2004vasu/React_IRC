@@ -40,19 +40,28 @@ body {
 
 .logo-image {
   width: 100px; 
-  height: auto; 
+  height: 100px; 
   padding-right: 900px;
 }
 
 .links {
   display: flex;
   align-items:end;
+  flex-direction: row;
+  
 }
 
 .links a {
   margin-left: 20px; 
   color: rgb(211, 21, 21);
   text-decoration: none;
+  background-color: azure;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-right:7px;
+
+  border-radius: 2px;
 }
 
 .links a:hover {
