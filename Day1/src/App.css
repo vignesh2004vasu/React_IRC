@@ -17,7 +17,17 @@ body {
   font-size: 1vw;
 }
 
-nav {
+/* .navb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position:sticky;
+  top: 0;
+} */
+.navb {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,9 +35,30 @@ nav {
   color: white;
   padding: 10px 20px;
   position: sticky;
-  top:0px;
-  
+  top: 0;
 }
+
+.logo-image {
+  width: 100px; 
+  height: auto; 
+  padding-right: 900px;
+}
+
+.links {
+  display: flex;
+  align-items:end;
+}
+
+.links a {
+  margin-left: 20px; 
+  color: rgb(211, 21, 21);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
 .logo-image {
   width: 100px;
   height: 50px;
