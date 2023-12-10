@@ -1,0 +1,39 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #046d14;
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top:0;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  Link{
+gap:2rem;
+  }
