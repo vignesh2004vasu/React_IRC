@@ -11,7 +11,7 @@ function Users() {
     const {id} = useParams()
 
     const authenticateAdmin = () => {
-        // Replace this condition with your authentication logic
+        
         if (adminId === 'admin' && adminPassword === 'admin') {
             setAuthenticated(true);
         } else {
