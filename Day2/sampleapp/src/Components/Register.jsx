@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Assests/css/Register.css'
 import Navbar from './Navbar';
 
 function Register(){
+
+    const [user,setUser]=useState({
+        username:"",
+        email:"",
+        password:""
+    })
+
+    const{username,email,password}=user
+
   return (
     <div>
       <Navbar/>
@@ -13,13 +22,13 @@ function Register(){
         <form className="login-form">
           <div className="input-group">
 
-            <input type="text" id="username" name="username" placeholder="Enter Username" />
+            <input type="text" id="username" name="username" placeholder="Enter Username" value={username} />
           </div>
           <div className="input-group">
-            <input type="password" id="password" name="password" placeholder="Enter Username"/>
+            <input type="password" id="password" name="password" placeholder="Enter Username" value={email}/>
           </div>
           <div className="input-group">
-                     <input type="password" id="password" name="password" placeholder="Enter Password"/>
+                     <input type="password" id="password" name="password" placeholder="Enter Password" value={password}/>
           </div>
           <div className="input-group">
                      <input type="password" id="cpassword" name="password" placeholder="Confirm Password"/>
