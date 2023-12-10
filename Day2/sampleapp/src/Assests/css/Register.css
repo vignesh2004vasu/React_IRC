@@ -47,7 +47,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"]{
   padding: 8px;
   width: 25vw;
   border-radius: 4px;
