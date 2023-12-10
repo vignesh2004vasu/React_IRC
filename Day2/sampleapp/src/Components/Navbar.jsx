@@ -6,15 +6,16 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src='' alt="Logo" />
+      <img src="./V logo.jpg" alt="Logo" />
+
       </div>
       <ul className="nav-links">
         <li>
-        <Link to="/">Users</Link>
+        <Link to="/Users">Admin</Link>
 
         </li>
         <li>
-        <Link to="/Login" >Login
+        <Link to="/" >Login
         </Link>
         </li>
         <li>
