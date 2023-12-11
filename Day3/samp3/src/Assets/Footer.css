@@ -1,0 +1,14 @@
+footer {
+
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    overflow:hidden;
+  }
+
+  footer:hover{
+    background-color: rgba(10, 10, 126, 0.993);
+  }
