@@ -4,7 +4,7 @@ import { useEffect,useState } from 'react';
 function Home()
 {
     const [localStorageItem, setLocalStorageItem] = useState('');
-
+    const [showAnimation, setShowAnimation] = useState(false);
   
   useEffect(() => {
     
@@ -12,6 +12,10 @@ function Home()
 
     if (itemFromLocalStorage) {
       setLocalStorageItem(itemFromLocalStorage);
+      setShowAnimation(true); // Trigger animation when username is present
+      setTimeout(() => {
+        setShowAnimation(false); // Turn off animation after 2 seconds
+      }, 2000);
     }
   }, []);
 
@@ -19,7 +23,7 @@ function Home()
         <div>
             <Navbar/>
             <div className="main-container" style={{ backgroundColor: 'white' }}>
-                <div>
+                <div className={showAnimation ? 'success-animation' : ''}>
                 <h1>LOGIN SUCCESSFUL</h1>
 
                 </div>

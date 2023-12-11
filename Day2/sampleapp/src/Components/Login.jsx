@@ -36,7 +36,9 @@ function Login(){
           if (foundUser) {
 
             localStorage.setItem('username', user.username);
+            
               navigate('/Home');
+
           } else {
 
               alert('Invalid credentials')
