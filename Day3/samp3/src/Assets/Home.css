@@ -1,0 +1,17 @@
+.Home,.nature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center; 
+    padding: 20px;
+  }
+  
+  .nature img {
+   
+ 
+      width:20%;
+      height:50%;
+    border-radius: 8px; 
+  }
+
+  
