@@ -35,7 +35,7 @@ function Register(){
     <div className="main-container">
      
       <div className="login-container">
-        <h2>Login</h2>
+        <h2>Register</h2>
         <form className="login-form" onSubmit={(e)=>onSubmit(e)}>
           <div className="input-group">
 
