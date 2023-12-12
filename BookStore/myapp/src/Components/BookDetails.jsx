@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const BookDetails = ({ books }) => {
-  const { id } = useParams();
-  const book = books.find((item) => item.id === Number(id));
+  const { id } = useParams(); // Retrieve the 'id' parameter from the URL
+  const book = books.find((book) => book.id === parseInt(id, 10)); // Convert 'id' to number
 
   if (!book) {
     return <div>Book not found!</div>;
@@ -23,7 +23,7 @@ const BookDetails = ({ books }) => {
           </span>
         ))}
       </div>
-      {/* Add more details as needed */}
+   
     </div>
   );
 };

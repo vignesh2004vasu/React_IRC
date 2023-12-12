@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: flex;
     justify-content: space-between; 
   }
@@ -15,9 +15,79 @@
   }
 
   .showcase {
-    margin-left: auto; /* Pushes the showcase to the right */
+    margin-left: auto; 
   }
 .book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background: #2f0dca;
+    width: 95%; 
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+  }
+  
+  .book-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  .book-item img {
+    width: 150px; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .book-item h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .book-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .reviews {
+    display: flex;
+    align-items: center;
+    color: #FFD700; 
+    margin-top: 8px;
+  }
+  
+  .reviews span {
+    margin-right: 4px;
+    font-size: 16px;
+  }
+   */
+   .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dash,
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #6ff3e5;
+    width: 50vw;
+    height: 50vh;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .showcase {
+    margin-left: auto; /* Pushes the showcase to the right */
+  }
+  
+  .book-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -28,6 +98,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a shadow */
     padding: 20px;
+    
   }
   
   .book-item {
@@ -36,6 +107,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a shadow to book items */
   }
+
+  
+  
+  
   .book-item img {
     width: 150px; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */
@@ -57,12 +132,107 @@
   .reviews {
     display: flex;
     align-items: center;
-    color: #FFD700; /* Golden yellow for stars */
+    color: #ffd700; /* Golden yellow for stars */
     margin-top: 8px;
   }
   
   .reviews span {
     margin-right: 4px;
     font-size: 16px;
+  }
+
+
+
+  .footer{
+
+    display: flex;
+    width: 100vw;
+    height: 9rem;
+    padding-top: 20px;
+    background-color: #333;
+  }
+  
+  .card {
+    display: flex;
+    height: 70px;
+    width: 350px;
+  }
+  
+  .card svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    padding: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .card .social-link1,.card .social-link2,.card .social-link3,.card .social-link4,.card .social-link5 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+  }
+  
+  .card svg {
+    transform: scale(1);
+  }
+  
+  .card .social-link1:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card .social-link2:hover {
+    background-color: #242c34;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card .social-link3:hover {
+    background-color: #5865f2;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card .social-link4:hover {
+    background-color: #0a66c2;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .card .social-link5:hover {
+    background-color: #ff8000;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
   }
   

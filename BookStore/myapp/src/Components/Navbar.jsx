@@ -1,5 +1,6 @@
 import '../Assets/Navbar.css'
 import { Link } from 'react-router-dom'
+import w1 from '../Assets/icons8-book-64.png'
 export default function  Navbar()
 {
 
@@ -7,7 +8,10 @@ export default function  Navbar()
 
        <>
         <div className="navbar">
-            <ul class="nav-links">
+            <div>
+                <img src={w1} alt='logo'/>
+            </div>
+            <ul class="nav-links" id="home">
                     <Link
                     to="/home"
                     >

@@ -1,6 +1,6 @@
 import '../Assets/Login.css'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 
 export default function Login()
@@ -35,29 +35,33 @@ return(
 
 <>
 <Navbar/>
-    <div class="login-box">
-  <p>Login</p>
-  <form onSubmit={log}>
-    <div class="user-box">
-      <input type="text" name="" id="username" onChange={HandleChange}/>
-      <label>Username</label>
+<div className="login-box">
+      <p>Login</p>
+      <form onSubmit={log}>
+        <div className="user-box">
+          <input type="text" name="" id="username" onChange={HandleChange} />
+          <label>Username</label>
+        </div>
+        <div className="user-box">
+          <input type="password" id="password" onChange={HandleChange} />
+          <label>Password</label>
+        </div>
+        <button href="#" className="button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </button>
+      </form>
+      <p><a href="" className="a2">Don't have an account? Sign up!</a></p>
+      <p><a href="" className="a2">If Admin,</a>
+      <Link to='/admin'>
+      <a className='a2'>Click Here</a>
+      </Link> 
+      
+      </p>
     </div>
-    <div class="user-box">
-      <input type="password" id="password" onChange={HandleChange}/>
-      <label>Password</label>
-    </div>
-    <button href="#" className='button'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </button>
-  </form>
-  <p>Don't have an account? <a href="" class="a2">Sign up!</a></p>
-  <p>If Admin,Click here<a href="" class="a2">Admin</a></p>
-</div>
-
 </>
 
         
