@@ -12,18 +12,15 @@ function Home()
 
     if (itemFromLocalStorage) {
       setLocalStorageItem(itemFromLocalStorage);
-      setShowAnimation(true); // Trigger animation when username is present
-      setTimeout(() => {
-        setShowAnimation(false); // Turn off animation after 2 seconds
-      }, 2000);
+     
     }
   }, []);
 
     return(
         <div>
             <Navbar/>
-            <div className="main-container" style={{ backgroundColor: 'white' }}>
-                <div className={showAnimation ? 'success-animation' : ''}>
+            <div className="main-container" >
+                
                 <h1>LOGIN SUCCESSFUL</h1>
 
                 </div>
@@ -36,7 +33,7 @@ function Home()
 
         </div>
             
-        </div>
+        
     )
 }
 
