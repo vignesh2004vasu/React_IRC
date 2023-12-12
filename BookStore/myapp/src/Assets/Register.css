@@ -1,0 +1,28 @@
+
+  
+ 
+  
+
+ 
+  
+
+  .button {
+
+    display: flex;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #15037c;;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Transition for smooth effect */
+  }
+  
+  .button:hover {
+    background-color: #fff; /* Change background color on hover */
+    color: #15037c; /* Change text color on hover */
+   
+  }
