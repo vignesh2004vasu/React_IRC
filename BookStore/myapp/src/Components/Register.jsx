@@ -34,6 +34,8 @@ export default function Register()
 <Navbar/>
         <div class="login-box">
   <p>Register</p>
+  <br/>
+  <br/>
   <form onSubmit={Reg}>
     <div class="user-box">
       <input type="text" name="" id="username" onChange={HandleChange}/>
@@ -47,16 +49,14 @@ export default function Register()
       <input type="password" id="password" onChange={HandleChange}/>
       <label>Password</label>
     </div>
-    <div class="user-box">
-      <input type="password" id="cpassword"/>
-      <label>Confirm Password</label>
-    </div>
+ 
     <button href="#" className='button'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+ 
       Submit
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </form>
   

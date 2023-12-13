@@ -39,7 +39,9 @@ return(
 <>
 <Navbar/>
 <div className="login-box">
-      <p>Login</p>
+      <p className='logname'>Login</p>
+      <br/>
+      <br/>
       <form onSubmit={log}>
         <div className="user-box">
           <input type="text" name="" id="username" onChange={HandleChange} />
