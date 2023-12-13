@@ -163,7 +163,7 @@ export default function Home() {
   </a>
 </div>
 
-<h3>Follow Our Social Media Handles For Updates</h3>
+<h3 className="foot">Follow Our Social Media Handles For Updates</h3>
 
       </div>
     </>

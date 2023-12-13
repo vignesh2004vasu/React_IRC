@@ -167,4 +167,14 @@
       transform: scale(1);
     }
   }
+
+  .foot
+  {
+    padding: 5px;
+
+  }
+
+  .foot:hover{
+     color:#e6683c
+  }
   
