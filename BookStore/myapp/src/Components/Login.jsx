@@ -19,7 +19,10 @@ const log=(e)=>
   const a=localStorage.getItem('uname');
   const b=localStorage.getItem('pass');
   if(a===data.username && b===data.password)
+  {
+          localStorage.setItem('isLoggedIn', true); 
           navigate('/home');
+  }
   else
       alert('Invalid Credentials');
 }

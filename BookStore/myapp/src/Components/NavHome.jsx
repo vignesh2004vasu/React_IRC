@@ -1,18 +1,24 @@
-import '../Assets/Navbar.css'
-import { Link } from 'react-router-dom'
-import w1 from '../Assets/icons8-book-64.png'
-export default function  Navbar()
-{
-    
+import '../Assets/NavHome.css'
+import w1 from '../Assets/icons8-book-64.png';
+import { Link } from 'react-router-dom';
+
+
+
+export default function NavHome() {
+
+    const logout=(e)=>
+    {
+        localStorage.setItem('isLoggedIn',false)
+    };
 
     return(
 
-       <>
+        <>
         <div className="navbar">
             <div>
                 <img src={w1} alt='logo'/>
             </div>
-            <ul class="nav-links" id="home">
+            <ul class="nav-links" id="home1">
                     <Link
                     to="/home"
                     >
@@ -21,18 +27,14 @@ export default function  Navbar()
                     <Link
                     to="/login"
                     >
-                    <li><a href="#home">Login</a></li>
+                    <li><a href="#home" onClick={logout}>Logout</a></li>
                     </Link>
-                    <Link
-                    to="/register"
-                    >
-                    <li><a href="#home">Register</a></li>
-                    </Link>
+                    
                     
                     
             </ul>
         </div> 
        </>
-
     )
-}
+    
+};

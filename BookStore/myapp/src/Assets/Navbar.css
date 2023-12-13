@@ -9,6 +9,11 @@
   top: 0;
 }
 
+
+#home{
+  padding-left: 1000px
+}
+
 .nav-links {
   list-style-type: none;
   display: flex;
