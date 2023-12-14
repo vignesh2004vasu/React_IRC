@@ -23,8 +23,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 
 
 const pages = ["Home", "Login", "Aboutus"];
-const Item = styled(Paper)(({ theme }) => ({
-  
+const Item = styled(Paper)(() => ({
+    textAlign:'center',
 }));
 
 function Nav() {
@@ -211,6 +211,41 @@ function Nav() {
           </Typography>
         </Box>
       </Modal> 
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        
+        <Grid xs={3}>
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>xs=2</Item>
+        </Grid>
+      </Grid>
+    </Box>
     </>
   );
 }
