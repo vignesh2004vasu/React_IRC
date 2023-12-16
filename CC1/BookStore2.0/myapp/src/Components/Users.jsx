@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import '../Assets/Users.css'
+
+
 
 function Users() {
     const [users, setUsers] = useState([]);
     const [authenticated, setAuthenticated] = useState(false);
     const [adminId, setAdminId] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
-    const {id} = useParams()
+    
 
     const authenticateAdmin = () => {
         
@@ -67,12 +69,17 @@ function Users() {
             ) : (
                 <div>
                     <Navbar />
+                    <Link to="/book">
+                    <button>
+                        Books
+                    </button>
+                    </Link>
                     <div className="container">
                         <div className="py-4">
                             <table className="table border shadow">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Sr.No</th>
+                                        <th scope="col">Id</th>
                                         <th scope="col">Username</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Password</th>

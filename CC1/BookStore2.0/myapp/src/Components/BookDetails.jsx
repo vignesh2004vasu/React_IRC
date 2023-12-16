@@ -1,31 +1,19 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
-const BookDetails = ({ books }) => {
-  const { id } = useParams(); // Retrieve the 'id' parameter from the URL
-  const book = books.find((book) => book.id === parseInt(id, 10)); // Convert 'id' to number
+function BookDetails(props) {
+// Access the passed book details
 
-  if (!book) {
-    return <div>Book not found!</div>;
-  }
+  // Use the book details object to display specific information
 
   return (
-    <div className="book-details">
-      <img src={book.image} alt={book.title} />
-      <h2>{book.title}</h2>
-      <p>By {book.author}</p>
-      <p>Price: {book.price}</p>
-      <div className="reviews">
-        Reviews:
-        {Array.from({ length: book.reviews }, (_, index) => (
-          <span key={index} role="img" aria-label="star">
-            ⭐
-          </span>
-        ))}
-      </div>
-   
+    <div>
+      {/* Display book details */}
+      <h2>Book Details</h2>
+      <p>Title: {props.title}</p>
+      <p>Author: {props.author}</p>
+      {/* Display other book details using the retrieved data */}
     </div>
   );
-};
+}
 
 export default BookDetails;

@@ -2,6 +2,8 @@ import Navbar from "./Navbar";
 import '../Assets/Home.css';
 import {useEffect,useState} from "react";
 import NavHome from "./NavHome";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -92,6 +94,10 @@ export default function Home() {
       image: 'https://marketplace.canva.com/EAFfV74NxCg/1/0/1003w/canva-colorful-blue-illustration-beach-children%27s-book-cover-eTSt5e-cETQ.jpg',
     },
   ];
+  const handleClick = (e) => {
+    localStorage.setItem("bookid",e)
+  };
+  
 
   return (
     <>
@@ -117,9 +123,10 @@ export default function Home() {
 
       </span>
       </div>
-      <div className="book-grid">
+      <div className="book-grid" >
         {books.map((book) => (
-          <div to={`/book/${book.id}`} key={book.id} className="book-item">
+         <Link onClick={handleClick(book.id)} to={{ pathname: `/book/${book.id}`, state: { book }}} key={book.id} className="book-item"> 
+          <div >
             <img src={book.image} alt={book.title} />
             <h3>{book.title}</h3>
             <p>By {book.author}</p>
@@ -133,6 +140,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </Link>
         ))}
       </div>
       <div className="footer">

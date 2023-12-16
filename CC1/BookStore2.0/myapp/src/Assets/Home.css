@@ -1,15 +1,19 @@
    .container {
     display: flex;
     justify-content: space-between;
+    max-width: 95vw;
+
   }
   
   .dash,
   .showcase {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background: #f5dd07;
-    width: 50vw;
+    width: 50%;
+    max-width: 95vw;
     height: 50vh;
     margin: 20px;
     border-radius: 10px;

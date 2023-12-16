@@ -1,55 +1,108 @@
-/* Users.css */
+
+/* Set body to flex display and full height */
+
+.py-4
+{
+  width: 100vw;
+}
+
+
 
 /* Apply styles to the table */
+.admin-authentication {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.admin-authentication h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-authentication input[type="text"],
+.admin-authentication input[type="password"] {
+  width: calc(100% - 20px);
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-authentication button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-authentication button:hover {
+  background-color: #0056b3;
+}
+
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  /* Style table header */
-  .table th {
-    padding: 8px;
-    text-align: left;
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Style table rows */
-  .table td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Style table rows on hover */
-  .table tbody tr:hover {
-    background-color: #f5f5f5;
-  }
-  
-  /* Style buttons within the table */
-  .table .btn {
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Style primary button */
-  .table .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Style outline button */
-  .table .btn-outline-primary {
-    border: 1px solid #007bff;
-    color: #007bff;
-    background-color: transparent;
-  }
-  
-  /* Style danger button */
-  .table .btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style table header */
+.table th {
+  padding: 8px;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style table rows */
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style table rows on hover */
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style buttons within the table */
+.table .btn {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style primary button */
+.table .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Style outline button */
+.table .btn-outline-primary {
+  border: 1px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Style danger button */
+.table .btn-danger {
+  background-color: #dc3545;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #fff;
+}
