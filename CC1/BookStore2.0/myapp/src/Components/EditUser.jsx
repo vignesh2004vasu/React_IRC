@@ -30,7 +30,7 @@ function EditUser() {
         e.preventDefault();
 
         await axios.put(`http://localhost:8080/user/${id}`, user);
-        navigate('/admin');
+        navigate('/user');
     };
 
     const loadUser = async () => {

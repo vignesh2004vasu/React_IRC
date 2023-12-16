@@ -32,7 +32,7 @@ function EditBook() {
         e.preventDefault();
 
         await axios.put(`http://localhost:8080/book/${id}`, book);
-        navigate('/admin');
+        navigate('/book');
     };
 
     const loadBook = async () => {

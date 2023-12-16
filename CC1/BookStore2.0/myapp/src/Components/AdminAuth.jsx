@@ -1,11 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminAuth() {
+
+    const [adminId, setAdminId] = useState('');
+    const [adminPassword, setAdminPassword] = useState('');
+
+
+
+    const navigate =useNavigate()
 
     const authenticateAdmin = () => {
         
         if (adminId === 'admin' && adminPassword === 'admin') {
-            setAuthenticated(true);
+           
+            navigate("/user")
         } else {
             alert('Invalid credentials. Please try again.');
         }

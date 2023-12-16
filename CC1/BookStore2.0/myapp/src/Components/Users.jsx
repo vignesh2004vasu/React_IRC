@@ -8,25 +8,14 @@ import '../Assets/Users.css'
 
 function Users() {
     const [users, setUsers] = useState([]);
-    const [authenticated, setAuthenticated] = useState(false);
-    const [adminId, setAdminId] = useState('');
-    const [adminPassword, setAdminPassword] = useState('');
-    
-
-    const authenticateAdmin = () => {
-        
-        if (adminId === 'admin' && adminPassword === 'admin') {
-            setAuthenticated(true);
-        } else {
-            alert('Invalid credentials. Please try again.');
-        }
-    };
+  
+  
 
     useEffect(() => {
-        if (authenticated) {
+        
             loadUsers();
-        }
-    }, [authenticated]);
+        
+    }, []);
 
     const loadUsers = async () => {
         try {
@@ -48,25 +37,7 @@ function Users() {
   };
 
     return (
-        <div>
-            {!authenticated ? (
-                <div className="admin-authentication">
-                    <h2>Admin Login</h2>
-                    <input
-                        type="text"
-                        placeholder="Admin ID"
-                        value={adminId}
-                        onChange={(e) => setAdminId(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={adminPassword}
-                        onChange={(e) => setAdminPassword(e.target.value)}
-                    />
-                    <button onClick={authenticateAdmin}>Login</button>
-                </div>
-            ) : (
+        
                 <div>
                     <Navbar />
                     <Link to="/book">
@@ -109,8 +80,7 @@ function Users() {
                         </div>
                     </div>
                 </div>
-            )}
-        </div>
+           
     );
 }
 
