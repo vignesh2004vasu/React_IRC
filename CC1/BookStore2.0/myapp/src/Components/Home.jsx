@@ -43,7 +43,7 @@ export default function Home() {
   
   const loadBooks = async () => {
     try {
-        const result = await axios.get('http://localhost:8080/books'); // Replace with your API endpoint
+        const result = await axios.get('http://localhost:8080/books'); 
         setBooks(result.data);
     } catch (error) {
         console.error('Error loading books:', error);
