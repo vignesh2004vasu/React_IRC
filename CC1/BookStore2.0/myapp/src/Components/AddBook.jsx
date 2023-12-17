@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios'; // Assuming Axios for API requests
-
+import { useNavigate } from 'react-router-dom';
+import '../Assets/AddBook.css'
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 const AddBook = () => {
+  const navigate=useNavigate()
   const [bookData, setBookData] = useState({
     title: '',
     author: '',
@@ -21,8 +25,9 @@ const AddBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/books', bookData);
+      const response = await axios.post('http://localhost:8080/book', bookData);
       console.log('Book added:', response.data);
+      navigate("/book")
       
     } catch (error) {
       console.error('Error adding book:', error);
@@ -30,7 +35,11 @@ const AddBook = () => {
   };
 
   return (
-    <div>
+    <>
+    <Navbar/>
+    <div className='addcont'>
+    <Sidebar/>
+    <div className='addbook'>
       <h2>Add a New Book</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -53,9 +62,11 @@ const AddBook = () => {
           Image URL:
           <input type="text" name="image" value={bookData.image} onChange={handleChange} />
         </label>
-        <button type="submit">Add Book</button>
+        <button type="submit" onClick={handleSubmit}>Add Book</button>
       </form>
     </div>
+    </div>
+    </>
   );
 };
 

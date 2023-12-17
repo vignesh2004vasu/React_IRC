@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 export default function AdminAuth() {
 
@@ -22,6 +23,7 @@ export default function AdminAuth() {
 
   return (
     <>
+    <Navbar/>
     <h2>Admin Login</h2>
                     <input
                         type="text"

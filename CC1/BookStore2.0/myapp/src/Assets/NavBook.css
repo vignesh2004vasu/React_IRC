@@ -1,4 +1,4 @@
-.navbar {
+.book-navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -11,25 +11,25 @@
   }
   
   
-  #home1{
+  #book-home{
     padding-left: 1080px;
     
   }
   
-  .nav-links {
+  .book-nav-links {
     list-style-type: none;
     display: flex;
     margin: 0;
     padding: 0;
   }
     
-  .nav-links li {
+  .book-nav-links li {
     margin-right: 20px; 
 
     
   }
   
-  .nav-links a {
+  .book-nav-links a {
     font-size: larger;
     text-decoration: none;
     color: white;
@@ -37,7 +37,7 @@
   
   }
   
-  .nav-links a:hover {
+  .book-nav-links a:hover {
     border-bottom: 4px solid;
     
     border-radius: 2%;

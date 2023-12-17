@@ -1,11 +1,11 @@
-import '../Assets/NavHome.css'
+import '../Assets/NavBook.css'
 import w1 from '../Assets/icons8-book-64.png';
 import { Link } from 'react-router-dom';
 
 
 
 
-export default function NavHome() {
+export default function NavBook() {
 
     const logout=(e)=>
     {
@@ -15,11 +15,11 @@ export default function NavHome() {
     return(
 
         <>
-        <div className="navbar">
+        <div className="book-navbar">
             <div>
                 <img src={w1} alt='logo'/>
             </div>
-            <ul class="nav-links" id="home1">
+            <ul class="book-nav-links" id="book-home">
             
                     <Link
                     to="/home"

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
-import { Link} from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import '../Assets/Users.css'
+import Sidebar from "./Sidebar";
 
 
 
 function Users() {
     const [users, setUsers] = useState([]);
-  
+    const navigate=useNavigate()
   
 
     useEffect(() => {
@@ -36,16 +37,18 @@ function Users() {
       }
   };
 
+  const addClick = () => {
+    navigate("/adduser");
+  };
+
     return (
         
-                <div>
+                <div >
                     <Navbar />
-                    <Link to="/book">
-                    <button>
-                        Books
-                    </button>
-                    </Link>
-                    <div className="container">
+                  
+                    <div className='user-container'>  
+                    <Sidebar addClick={addClick} />
+                   
                         <div className="py-4">
                             <table className="table border shadow">
                                 <thead>
@@ -65,7 +68,7 @@ function Users() {
                                             <td>{user.email}</td>
                                             <td>{user.password}</td>
                                             <td>
-                                                <Link className="btn btn-primary mx-2">View</Link>
+                                               
                                                 <Link className="btn btn-outline-primary mx-2"
                                                 to={`/edituser/${user.id}`}
                                                 >Edit</Link>
@@ -79,6 +82,7 @@ function Users() {
                             </table>
                         </div>
                     </div>
+                  
                 </div>
            
     );

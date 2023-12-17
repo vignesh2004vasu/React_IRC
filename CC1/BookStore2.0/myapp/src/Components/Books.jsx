@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import "../Assets/Users.css";
+import "../Assets/Book.css";
+import Sidebar from "./Sidebar";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -12,9 +13,8 @@ function Books() {
 
   useEffect(() => {
     loadBooks();
-    // Simulating authentication status
-    // Replace this with your actual authentication logic
-    setAuthenticated(true); // Set to true or false based on authentication
+    
+    setAuthenticated(true); 
   }, []);
 
   const loadBooks = async () => {
@@ -41,10 +41,11 @@ function Books() {
   };
 
   return (
-    <div>
-      <div>
+    <div >
+
         <Navbar />
-        <div className="container">
+        <div className="book-container">
+        <Sidebar addClick={addClick} />
           <div className="py-4">
             <table className="table border shadow">
               <thead>
@@ -66,8 +67,8 @@ function Books() {
                     <td>{book.price}</td>
                     <td>{book.reviews}</td>
                     <td>
-                      <Link className="btn btn-primary mx-2">View</Link>
-                      {/* Edit link rendered conditionally */}
+                     
+                    
                       {authenticated && (
                         <Link
                           className="btn btn-outline-primary mx-2"
@@ -90,9 +91,7 @@ function Books() {
             </table>
           </div>
         </div>
-        <button onClick={addClick}>addbook</button>
       </div>
-    </div>
   );
 }
 

@@ -1,0 +1,14 @@
+.sidebar {
+    width: 150px;
+    
+    background-color: #15037c;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items in the center vertically */
+  }
+
+  .sidebar button {
+    margin-top: 10px; /* Adjust button spacing */
+  }

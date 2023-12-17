@@ -2,9 +2,12 @@ import '../Assets/Home.css';
 import axios from 'axios';
 import {useEffect,useState} from "react";
 import NavHome from "./NavHome";
-import { Link } from "react-router-dom";
-import Footer from './Footer';
+import { useNavigate } from "react-router-dom";
 
+import Footer from './Footer';
+import { useDispatch, useSelector} from "react-redux";
+
+import { selectBook } from './Store';
 
 
 
@@ -12,8 +15,10 @@ import Footer from './Footer';
 export default function Home() {
   const [books, setBooks] = useState([]);
   const [localStorageItem, setLocalStorageItem] = useState('');
+  const selectedBook = useSelector((state) => state.book.selectedBook);
+  const dispatch = useDispatch();
+  const navigate=useNavigate();
   useEffect(() => {
-    
     const itemFromLocalStorage = localStorage.getItem('username');
     loadBooks();
 
@@ -21,8 +26,21 @@ export default function Home() {
       setLocalStorageItem(itemFromLocalStorage);
      
     }
-  }, []);
+  
 
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/books");
+        setBooks(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchBooks();
+
+    
+  }, []);
+  
   const loadBooks = async () => {
     try {
         const result = await axios.get('http://localhost:8080/books'); // Replace with your API endpoint
@@ -33,10 +51,10 @@ export default function Home() {
     }
 };
  
-  const handleClick = (e) => {
-    localStorage.setItem("bookid",e)
+  const handleClick = (book) => {
+    dispatch(selectBook(book));
+    navigate(`/book/${book.id}`); 
   };
-  
 
   return (
     <>
@@ -65,7 +83,9 @@ export default function Home() {
       <div className="book-grid" >
         {books.map((book) => (
         
-          <div className="book-item">
+          <div className="book-item" 
+          key={book.id}
+          onClick={() => handleClick(book)}>
             <img src={book.imageUrl} alt={book.title} />
             <h3>{book.title}</h3>
             <p>By {book.author}</p>
