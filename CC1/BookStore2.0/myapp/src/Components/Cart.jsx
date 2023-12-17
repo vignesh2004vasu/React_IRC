@@ -1,36 +1,54 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from './CartSlice';
+import '../Assets/Cart.css';
 import NavHome from './NavHome';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
-  const handleRemove = (item) => {
-    dispatch(removeFromCart(item));
+  const handleRemoveFromCart = (itemId) => {
+    dispatch(removeFromCart({ id: itemId }));
   };
 
-  const handleClear = () => {
+  const handleClearCart = () => {
     dispatch(clearCart());
   };
 
+  const totalPrice = cartItems.reduce((total, item) => {
+    const price = parseFloat(item.price.slice(1));
+    return total + price;
+  }, 0);
+
   return (
     <>
-    <NavHome/>
-    <div>
-      <h1>Cart Items</h1>
-      <button onClick={handleClear}>Clear Cart</button>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.id}>
-            {/* Display item details */}
-            {item.title} - {item.price}
-            <button onClick={() => handleRemove(item)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <NavHome />
+      <div className="cart-container">
+        <h1>Shopping Cart</h1>
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <div className="cart-items">
+            {cartItems.map((item) => (
+              <div className="cart-item" key={item.id}>
+                <div className="item-details">
+                  <img src={item.imageUrl} alt={item.title}></img>
+                  <p>{item.title}</p>
+                  <p>Price: {item.price}</p>
+                </div>
+                <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+              </div>
+            ))}
+            <button onClick={handleClearCart}>Clear Cart</button>
+          </div>
+        )}
+        <br/>
+        <br/>
+        <div className="total-price">
+          <p>Total: ₹{totalPrice.toFixed(2)}</p>
+        </div>
+      </div>
     </>
   );
 };
