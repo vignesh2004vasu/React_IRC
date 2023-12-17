@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import Footer from './Footer';
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch} from "react-redux";
 
 import { selectBook } from './Store';
 import { addToCart } from './CartSlice';
@@ -17,7 +17,7 @@ import { addToCart } from './CartSlice';
 export default function Home() {
   const [books, setBooks] = useState([]);
   const [localStorageItem, setLocalStorageItem] = useState('');
-  const selectedBook = useSelector((state) => state.book.selectedBook);
+  // const selectedBook = useSelector((state) => state.book.selectedBook);
   const dispatch = useDispatch();
   const navigate=useNavigate();
   useEffect(() => {
@@ -105,7 +105,7 @@ export default function Home() {
               ))}
             </div>
             <button className="cart-button" onClick={() => handleAddToCart(book)}>
-              <ShoppingCartIcon fontSize="large" />
+              <ShoppingCartIcon fontSize="large"  />
             </button>
           </div>
         ))}

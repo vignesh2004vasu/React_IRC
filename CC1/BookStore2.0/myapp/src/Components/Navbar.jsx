@@ -1,38 +1,37 @@
-import '../Assets/Navbar.css'
-import { Link } from 'react-router-dom'
-import w1 from '../Assets/icons8-book-64.png'
-export default function  Navbar()
-{
-    
 
-    return(
+import '../Assets/NavHome.css';
+import w1 from '../Assets/icons8-book-64.png';
+import { Link } from 'react-router-dom';
 
-       <>
-        <div className="navbar">
-            <div>
-                <img src={w1} alt='logo'/>
-            </div>
-            <ul class="nav-links" id="home">
-                    <Link
-                    to="/home"
-                    >
-                    <li><a href="#home">Home</a></li>
-                    </Link>
-                    <Link
-                    to="/login"
-                    >
-                    <li><a href="#home">Login</a></li>
-                    </Link>
-                    <Link
-                    to="/register"
-                    >
-                    <li><a href="#home">Register</a></li>
-                    </Link>
-                    
-                    
-            </ul>
-        </div> 
-       </>
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
 
-    )
+
+export default function NavHome() {
+ 
+  
+
+  return (
+    <>
+      <div className="navbar-custom">
+      <div className='leftside'>
+        <div className="logo">
+          <img src={w1} alt='logo' />
+        </div>
+        <h5 className='title-class'>StoryHaven</h5>
+      </div>
+      <div className='rightside'>
+        <ul className="nav-links-custom" id="home1">
+          <Link className='homelink' id="homeb" to="/login">
+            <LoginIcon  fontSize='large'></LoginIcon>
+          </Link>
+          
+          <Link className='homelink' to="/register" >
+            <AppRegistrationIcon  fontSize='large'></AppRegistrationIcon>
+          </Link>
+        </ul>
+      </div>
+      </div>
+    </>
+  );
 }

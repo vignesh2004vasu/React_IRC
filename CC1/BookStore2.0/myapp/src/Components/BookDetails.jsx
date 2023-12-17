@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import NavBook from "./NavBook";
 import "../Assets/BookDetails.css"; // Import the CSS file for styling
+import NavHome from "./NavHome";
 
 const BookDetails = () => {
   const selectedBook = useSelector((state) => state.book.selectedBook);
@@ -14,7 +15,7 @@ const BookDetails = () => {
 
   return (
     <>
-      <NavBook />
+      <NavHome/>
       <div className="book-details-container">
         <div className="book-details-card">
           <div className="book-details-image-card">

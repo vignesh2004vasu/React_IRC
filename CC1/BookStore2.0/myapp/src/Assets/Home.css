@@ -74,3 +74,19 @@
   margin-right: 4px;
   font-size: 16px;
 }
+
+.cart-button {
+  /* Your button styles */
+  /* For example: */
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Adding a transition for smooth color change */
+}
+
+/* Adding hover effect */
+.cart-button:hover {
+  background-color: #2980b9; /* Change this to the color you prefer on hover */
+}

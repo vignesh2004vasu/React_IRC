@@ -1,47 +1,62 @@
-.navbar {
+/* NavHome.css */
+
+/* Styles for the navbar */
+.title-class {
+  color: white;
+  margin-right: 10px;
+}
+
+.navbar-custom {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  width: 100%;
+  justify-content: space-between; /* This evenly distributes the left and right sections */
+  width: 100vw;
   height: 5rem;
   background-color: #15037c;
   position: sticky;
-  
   top: 0;
+  padding: 0 20px; /* Add padding to the navbar for some space around its content */
 }
 
-
-#home{
-  padding-left: 1000px
-}
-
-.nav-links {
+/* Styles for the navigation links */
+.nav-links-custom {
   list-style-type: none;
   display: flex;
   margin: 0;
   padding: 0;
-}
-  
-.nav-links li {
-  margin-right: 20px;
-  padding-right: px; 
-  
+  gap: 1.5rem;
 }
 
-.nav-links a {
+.nav-links-custom li {
+  margin-right: 20px;
+}
+
+.nav-links-custom a {
   font-size: larger;
   text-decoration: none;
   color: white;
-  
-
 }
 
-.nav-links a:hover {
+.nav-links-custom a:hover {
   border-bottom: 4px solid;
-  
   border-radius: 2%;
 }
 
-.nav-links li:hover a {
-  border-bottom: none; 
+.nav-links-custom li:hover a {
+  border-bottom: none;
+}
+
+.leftside {
+  display: flex;
+  align-items: center; /* Vertically center the items */
+}
+.rightside {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.homelink
+{
+  margin-right: 30px;
 }
