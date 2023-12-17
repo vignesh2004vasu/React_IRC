@@ -11,6 +11,7 @@ import Books from './Components/Books';
 import EditBook from './Components/EditBook';
 import AddBook from './Components/AddBook';
 import AdminAuth from './Components/AdminAuth';
+import Cart from './Components/Cart';
 
 function App() {
  
@@ -29,6 +30,7 @@ function App() {
         <Route path="/editbook/:id" element={<EditBook/>}/>
         <Route path="/book" element={<Books/>}/>
         <Route path="/addbook" element={<AddBook/>}/>
+        <Route path="/cart" element={<Cart/>}/>
         
       </Routes>
     </Router> 

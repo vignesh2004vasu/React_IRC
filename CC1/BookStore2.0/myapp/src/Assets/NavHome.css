@@ -1,49 +1,45 @@
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100vw;
-    height: 5rem;
-    background-color: #15037c;
-    position: sticky;
-    top: 0;
+/* NavHome.css */
 
-  }
-  
-  
-  #home1{
-    padding-left: 1080px;
-    
-  }
-  
-  .nav-links {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-    
-  .nav-links li {
-    margin-right: 20px; 
+/* Styles for the navbar */
+.navbar-custom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 5rem;
+  background-color: #15037c;
+  position: sticky;
+  top: 0;
+}
 
-    
-  }
-  
-  .nav-links a {
-    font-size: larger;
-    text-decoration: none;
-    color: white;
-    
-  
-  }
-  
-  .nav-links a:hover {
-    border-bottom: 4px solid;
-    
-    border-radius: 2%;
-  }
-  
-  .nav-links li:hover a {
-    border-bottom: none; 
-  }
-  
+.homeb
+{
+  margin-left: 1000px;
+}
+/* Styles for the navigation links */
+.nav-links-custom {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.nav-links-custom li {
+  margin-right: 20px;
+}
+
+.nav-links-custom a {
+  font-size: larger;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links-custom a:hover {
+  border-bottom: 4px solid;
+  border-radius: 2%;
+}
+
+.nav-links-custom li:hover a {
+  border-bottom: none;
+}

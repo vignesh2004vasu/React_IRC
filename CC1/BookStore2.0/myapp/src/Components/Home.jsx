@@ -3,11 +3,13 @@ import axios from 'axios';
 import {useEffect,useState} from "react";
 import NavHome from "./NavHome";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import Footer from './Footer';
 import { useDispatch, useSelector} from "react-redux";
 
 import { selectBook } from './Store';
+import { addToCart } from './CartSlice';
 
 
 
@@ -56,10 +58,14 @@ export default function Home() {
     navigate(`/book/${book.id}`); 
   };
 
+  const handleAddToCart = (book) => {
+    dispatch(addToCart(book)); 
+  };
+
   return (
     <>
       <NavHome />
-      <div className="container">
+      <div className="home-container">
         <span className="dash">
         <h1>Hello {localStorageItem},</h1>
         <br />
@@ -85,8 +91,8 @@ export default function Home() {
         
           <div className="book-item" 
           key={book.id}
-          onClick={() => handleClick(book)}>
-            <img src={book.imageUrl} alt={book.title} />
+          >
+            <img src={book.imageUrl} alt={book.title} onClick={() => handleClick(book)} />
             <h3>{book.title}</h3>
             <p>By {book.author}</p>
             <p>Price: {book.price}</p>
@@ -98,6 +104,9 @@ export default function Home() {
                 </span>
               ))}
             </div>
+            <button className="cart-button" onClick={() => handleAddToCart(book)}>
+              <ShoppingCartIcon fontSize="large" />
+            </button>
           </div>
         ))}
       </div>
