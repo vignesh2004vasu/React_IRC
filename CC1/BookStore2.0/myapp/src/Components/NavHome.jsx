@@ -9,6 +9,7 @@ import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HomeIcon from '@mui/icons-material/Home';
 import { useSelector } from 'react-redux';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -30,9 +31,13 @@ export default function NavHome() {
   return (
     <>
       <div className="navbar-custom">
+      <div className='leftside'>
         <div className="logo">
           <img src={w1} alt='logo' />
         </div>
+        <h5 className='title-class'>StoryHaven</h5>
+      </div>
+      <div className='rightside'>
         <ul className="nav-links-custom" id="home1">
           <Link className='homelink' id="homeb" to="/home">
             <HomeIcon fontSize='large'></HomeIcon>
@@ -45,9 +50,10 @@ export default function NavHome() {
        
           </Link>
           <Link className='homelink' to="/login" onClick={logout}>
-            <h5>Logout</h5>
+            <LogoutIcon fontSize='large'></LogoutIcon>
           </Link>
         </ul>
+      </div>
       </div>
     </>
   );
