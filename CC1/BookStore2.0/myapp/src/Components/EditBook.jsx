@@ -13,12 +13,13 @@ function EditBook() {
     const [book, setBook] = useState({
         title: '',
         author: '',
+        genre:'',
         price: '',
         reviews: 0,
         imageUrl: '',
     });
 
-    const { title, author, price, reviews, imageUrl } = book;
+    const { title, author,genre, price, reviews, imageUrl } = book;
 
     const onInputChange = (e) => {
         setBook({ ...book, [e.target.name]: e.target.value });
@@ -72,6 +73,17 @@ function EditBook() {
                                     name="author"
                                     placeholder="Enter Author"
                                     value={author}
+                                    onChange={(e) => onInputChange(e)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="genre"
+                                    name="genre"
+                                    placeholder="genre"
+                                    value={genre}
                                     onChange={(e) => onInputChange(e)}
                                 />
                             </div>

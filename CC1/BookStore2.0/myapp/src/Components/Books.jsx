@@ -53,6 +53,7 @@ function Books() {
                   <th scope="col">ID</th>
                   <th scope="col">Title</th>
                   <th scope="col">Author</th>
+                  <th scope="col">Genre</th>
                   <th scope="col">Price</th>
                   <th scope="col">Reviews</th>
                   <th scope="col">Actions</th>
@@ -64,6 +65,7 @@ function Books() {
                     <td>{book.id}</td>
                     <td>{book.title}</td>
                     <td>{book.author}</td>
+                    <td>{book.genre}</td>
                     <td>{book.price}</td>
                     <td>{book.reviews}</td>
                     <td>

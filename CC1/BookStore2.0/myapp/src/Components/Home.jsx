@@ -88,8 +88,7 @@ export default function Home() {
       </div>
       <div className="book-grid" >
         {books.map((book) => (
-        
-          <div className="book-item" 
+        <div className="book-item" 
           key={book.id}
           >
             <img src={book.imageUrl} alt={book.title} onClick={() => handleClick(book)} />

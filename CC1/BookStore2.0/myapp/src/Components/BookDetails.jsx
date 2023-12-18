@@ -11,7 +11,7 @@ const BookDetails = () => {
     return <p>No book selected.</p>;
   }
 
-  const { title, author, price, reviews, imageUrl } = selectedBook;
+  const { title, author,genre, price, reviews, imageUrl } = selectedBook;
 
   return (
     <>
@@ -25,6 +25,7 @@ const BookDetails = () => {
             <h1>{title}</h1>
             <p>By {author}</p>
             <p>Price: {price}</p>
+            <p>Genre: {genre}</p>
             <div className="reviews">
               Reviews:
               {Array.from({ length: reviews }, (_, index) => (

@@ -1,5 +1,5 @@
 // NavHome.jsx
-
+import { useState } from 'react';
 import '../Assets/NavHome.css';
 import w1 from '../Assets/icons8-book-64.png';
 import { Link } from 'react-router-dom';
@@ -25,6 +25,9 @@ export default function NavHome() {
     localStorage.setItem('isLoggedIn', false);
   };
 
+  
+
+
   const cartItems = useSelector((state) => state.cart.items);
   const cartItemCount = cartItems.length;
 
@@ -37,7 +40,9 @@ export default function NavHome() {
         </div>
         <h5 className='title-class'>StoryHaven</h5>
       </div>
+
       <div className='rightside'>
+      
         <ul className="nav-links-custom" id="home1">
           <Link className='homelink' id="homeb" to="/home">
             <HomeIcon fontSize='large'></HomeIcon>
