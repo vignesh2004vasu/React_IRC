@@ -1,31 +1,26 @@
-import { configureStore, createReducer, createSlice } from "@reduxjs/toolkit";
-import cartReducer from "./CartSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-const bookSlice = createSlice({
-  name: "book",
-  initialState: {
-    selectedBook: null,
-    isBookSelected: false,
-  },
-  reducers: {
-    selectBook: (state, action) => {
-      state.selectedBook = action.payload;
-      state.isBookSelected = true;
-    },
-    deselectBook: (state) => {
-      state.selectedBook = null;
-      state.isBookSelected = false;
-    },
-  },
+import bookReducer from './BookSlice';
+import cartReducer from './CartSlice';
+const rootReducer = combineReducers({
+  book: bookReducer,
+  cart: cartReducer,
+  
 });
 
-export const { selectBook, deselectBook } = bookSlice.actions;
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cart'], 
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    book: bookSlice.reducer,
-    cart: cartReducer
-    
-  },
+  reducer: persistedReducer,
 });
- 
+
+export const persistor = persistStore(store);

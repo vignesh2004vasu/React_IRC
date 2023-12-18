@@ -8,7 +8,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Footer from './Footer';
 import { useDispatch} from "react-redux";
 
-import { selectBook } from './Store';
+import { selectBook } from './BookSlice';
 import { addToCart } from './CartSlice';
 
 
