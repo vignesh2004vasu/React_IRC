@@ -8,8 +8,10 @@ import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HomeIcon from '@mui/icons-material/Home';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { setSearchTerm } from './BookSlice';
+import SearchIcon from '@mui/icons-material/Search';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -21,8 +23,14 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function NavHome() {
+  const dispatch = useDispatch();
   const logout = (e) => {
     localStorage.setItem('isLoggedIn', false);
+  };
+
+  
+  const handleSearchChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
   };
 
   
@@ -42,6 +50,15 @@ export default function NavHome() {
       </div>
 
       <div className='rightside'>
+      {/* <input
+            type='text'
+            placeholder='Search books'
+            onChange={handleSearchChange}
+          /> */}
+        <div class="InputContainer">
+  <input placeholder='Search books' id="input" class="input" name="text" type="text" onChange={handleSearchChange}/>
+  
+</div>
       
         <ul className="nav-links-custom" id="home1">
           <Link className='homelink' id="homeb" to="/home">

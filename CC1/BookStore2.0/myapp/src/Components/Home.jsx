@@ -1,58 +1,56 @@
-import '../Assets/Home.css';
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import axios from 'axios';
-import {useEffect,useState} from "react";
 import NavHome from "./NavHome";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
 import Footer from './Footer';
-import { useDispatch} from "react-redux";
-
 import { selectBook } from './BookSlice';
 import { addToCart } from './CartSlice';
-
-
-
+import '../Assets/Home.css'
 
 export default function Home() {
-  const [books, setBooks] = useState([]);
   const [localStorageItem, setLocalStorageItem] = useState('');
-  // const selectedBook = useSelector((state) => state.book.selectedBook);
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const searchTerm = useSelector((state) => state.book.searchTerm);
+  const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+
   useEffect(() => {
     const itemFromLocalStorage = localStorage.getItem('username');
-    loadBooks();
-
     if (itemFromLocalStorage) {
       setLocalStorageItem(itemFromLocalStorage);
-     
     }
-  
 
     const fetchBooks = async () => {
       try {
         const response = await axios.get("http://localhost:8080/books");
-        setBooks(response.data);
+        setBooks(response.data || []); // Store all books
+        setFilteredBooks(response.data || []); // Initialize filtered books with all books initially
       } catch (error) {
         console.error(error);
       }
     };
     fetchBooks();
-
-    
   }, []);
+
   
-  const loadBooks = async () => {
-    try {
-        const result = await axios.get('http://localhost:8080/books'); 
-        setBooks(result.data);
-    } catch (error) {
-        console.error('Error loading books:', error);
-        
+  useEffect(() => {
+   
+    if (books && books.length > 0 && searchTerm) {
+      const filtered = books.filter((book) => {
+        const title = book.title ? book.title.toLowerCase() : ''; // Check if title exists
+        const genre = book.genre ? book.genre.toLowerCase() : ''; // Check if genre exists
+        return title.includes(searchTerm.toLowerCase()) || genre.includes(searchTerm.toLowerCase());
+      });
+      setFilteredBooks(filtered);
+    } else {
+      
+      setFilteredBooks(books);
     }
-};
- 
+  }, [searchTerm, books]);
+
   const handleClick = (book) => {
     dispatch(selectBook(book));
     navigate(`/book/${book.id}`); 
@@ -67,30 +65,25 @@ export default function Home() {
       <NavHome />
       <div className="home-container">
         <span className="dash">
-        <h1>Hello {localStorageItem},</h1>
-        <br />
-        <h2>Looking for Books?</h2>
-
+          <h1>Hello {localStorageItem},</h1>
+          <br />
+          <h2>Looking for Books?</h2>
         </span>
         
-      <span className="showcase">
-        <h1>Showcase</h1>
-        <p>Your Books</p>
-        <ol>
+        <span className="showcase">
+          <h1>Showcase</h1>
+          <p>Your Books</p>
+          <ol>
             <li>Harry Potter</li>
             <li>Maze Runner</li>
             <li>Hunger Games</li>
             <li>Wimpy Kid</li>
-        </ol>
-
-
-      </span>
+          </ol>
+        </span>
       </div>
-      <div className="book-grid" >
-        {books.map((book) => (
-        <div className="book-item" 
-          key={book.id}
-          >
+      <div className="book-grid">
+        {filteredBooks.map((book) => (
+          <div className="book-item" key={book.id}>
             <img src={book.imageUrl} alt={book.title} onClick={() => handleClick(book)} />
             <h3>{book.title}</h3>
             <p>By {book.author}</p>
@@ -104,13 +97,12 @@ export default function Home() {
               ))}
             </div>
             <button className="cart-button" onClick={() => handleAddToCart(book)}>
-              <ShoppingCartIcon fontSize="large"  />
+              <ShoppingCartIcon fontSize="large" />
             </button>
           </div>
         ))}
       </div>
-     
-      <Footer/>
+      <Footer />
     </>
   );
 }

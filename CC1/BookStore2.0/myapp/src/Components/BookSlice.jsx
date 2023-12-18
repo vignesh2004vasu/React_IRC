@@ -7,6 +7,9 @@ const bookSlice = createSlice({
     isBookSelected: false,
   },
   reducers: {
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    },
     selectBook: (state, action) => {
       state.selectedBook = action.payload;
       state.isBookSelected = true;
@@ -19,4 +22,5 @@ const bookSlice = createSlice({
 });
 
 export const { selectBook, deselectBook } = bookSlice.actions;
+export const { setSearchTerm } = bookSlice.actions;
 export default bookSlice.reducer;
