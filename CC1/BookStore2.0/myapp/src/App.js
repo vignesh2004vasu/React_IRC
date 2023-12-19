@@ -12,6 +12,9 @@ import EditBook from './Components/EditBook';
 import AddBook from './Components/AddBook';
 import AdminAuth from './Components/AdminAuth';
 import Cart from './Components/Cart';
+import Userdash from './Components/Userdash';
+import Loader from './Components/Loader';
+
 
 function App() {
  
@@ -31,6 +34,9 @@ function App() {
         <Route path="/book" element={<Books/>}/>
         <Route path="/addbook" element={<AddBook/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/userdash" element={<Userdash/>}/>
+        <Route path="/load" element={<Loader/>}/>
+        
         
       </Routes>
     </Router> 

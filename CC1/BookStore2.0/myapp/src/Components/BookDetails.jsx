@@ -1,15 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import NavBook from "./NavBook";
-import "../Assets/BookDetails.css"; // Import the CSS file for styling
+import "../Assets/BookDetails.css"; 
 import NavHome from "./NavHome";
+import { addToCart } from './CartSlice';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 
 const BookDetails = () => {
   const selectedBook = useSelector((state) => state.book.selectedBook);
-
+  const dispatch = useDispatch();
   if (!selectedBook) {
     return <p>No book selected.</p>;
   }
+
+  const handleAddToCart = (selectedBook) => {
+    dispatch(addToCart(selectedBook)); 
+  };
+
 
   const { title, author,genre, price, reviews, imageUrl } = selectedBook;
 
@@ -34,8 +43,9 @@ const BookDetails = () => {
                 </span>
               ))}
             </div>
-            <button className="buy-button">Add to Cart</button>
-            {/* Additional details or buttons can be added here */}
+            <button className="cart-button" onClick={() => handleAddToCart(selectedBook)}>
+              <ShoppingCartIcon fontSize="large" />
+            </button>
           </div>
         </div>
       </div>

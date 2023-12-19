@@ -75,7 +75,7 @@ function EditUser() {
                             </div>
                             <div className="mb-3">
                                 <input
-                                    type="password"
+                                    type="text"
                                     className="form-control"
                                     id="password"
                                     name="password"

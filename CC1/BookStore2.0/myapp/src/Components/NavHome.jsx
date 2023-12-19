@@ -8,6 +8,7 @@ import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HomeIcon from '@mui/icons-material/Home';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import { useSelector,useDispatch } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { setSearchTerm } from './BookSlice';
@@ -64,6 +65,10 @@ export default function NavHome() {
           <Link className='homelink' id="homeb" to="/home">
             <HomeIcon fontSize='large'></HomeIcon>
           </Link>
+          <Link className='homelink' id="homeb" to="/userdash">
+            <DashboardIcon fontSize='large'></DashboardIcon>
+          </Link>
+
           <Link className='homelink' to="/cart">
          
           <StyledBadge badgeContent={cartItemCount} color="primary">

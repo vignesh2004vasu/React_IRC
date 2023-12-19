@@ -15,8 +15,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
-    height: 80vh;
-    margin-top: 40px;
+    height: auto;
+    
   }
   
   .addbook h2 {

@@ -7,7 +7,7 @@
   padding: 40px;
   margin: 20px auto;
   transform: translate(-50%, -55%);
-  background: #15037c;
+  background: #493638;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-radius: 10px;
@@ -76,45 +76,22 @@
   text-decoration: none;
 }
 
-/* Button Styling */
-.login-box form .button-container {
-  text-align: center;
-}
-.login-box form .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: transparent;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
+.btnlogin
+{
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #FAFAFA;
   text-transform: uppercase;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  margin-top: 40px; /* Adjust margin as needed */
-}
-.button:hover {
-  background-color: #fff;
-  color: #15037c;
-  border-color: #15037c;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin: 35px 0;
 }
 
-.button {
-  display: flex;
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: #15037c;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button:hover {
-  background-color: #fff;
-  color: #15037c;
+.btnlogin{
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }

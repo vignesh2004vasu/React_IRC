@@ -9,13 +9,13 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       
-      <button onClick={() => navigate("/addbook")} className="btn btn-primary mb-3">
+      <button onClick={() => navigate("/addbook")} className="btn">
         Add Book
       </button>
-      <button onClick={() => navigate("/user")} className="btn btn-primary mb-3">
+      <button onClick={() => navigate("/user")} className="btn">
         Users
       </button>
-      <button onClick={() => navigate("/book")} className="btn btn-primary mb-3">
+      <button onClick={() => navigate("/book")} className="btn">
         Books
       </button>
      

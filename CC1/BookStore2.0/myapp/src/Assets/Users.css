@@ -8,7 +8,7 @@
 }
 .table {
     
-    margin-left: 100px;
+    margin-left: 10px;
     width: 100%; /* Set table width to 70% of the screen */
     max-width: 100%;
     border-collapse: collapse;
@@ -28,6 +28,7 @@
 .table td {
   padding: 8px;
   border-bottom: 1px solid #ddd;
+
 }
 
 /* Style table rows on hover */

@@ -5,10 +5,16 @@
 
     
 }
+
+.py-4
+{
+  width:85vw;
+}
 .table {
     
-    margin-left :70px;
-    width: 100%; /* Set table width to 70% of the screen */
+    margin-left :10px;
+    margin-right: 30px;
+    width: 100%; 
     max-width: 100%;
     border-collapse: collapse;
     text-align: center;
@@ -19,6 +25,7 @@
 .table th {
   padding-left: 50px;
   padding-right: 50px;
+  width: 20vw;
   text-align: center;
   background-color: #f2f2f2;
   border-bottom: 1px solid #ddd;

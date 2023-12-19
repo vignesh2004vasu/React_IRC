@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import '../Assets/AdminAuth.css'
 
 export default function AdminAuth() {
 
@@ -24,21 +25,30 @@ export default function AdminAuth() {
   return (
     <>
     <Navbar/>
+    <div className='AdminAuthContainer'>
+
+    
     <h2>Admin Login</h2>
+            <div className='adminform'>
+
+            
                     <input
+                        className='admininput'
                         type="text"
                         placeholder="Admin ID"
                         value={adminId}
                         onChange={(e) => setAdminId(e.target.value)}
                     />
                     <input
+                        className='admininput'
                         type="password"
                         placeholder="Password"
                         value={adminPassword}
                         onChange={(e) => setAdminPassword(e.target.value)}
                     />
                     <button onClick={authenticateAdmin}>Login</button>
-                
+                </div>
+        </div>
         </>
   )
 }

@@ -9,6 +9,7 @@ const AddBook = () => {
   const [bookData, setBookData] = useState({
     title: '',
     author: '',
+    genre:'',
     price: '',
     reviews: 0,
     image: '',
@@ -51,12 +52,16 @@ const AddBook = () => {
           <input type="text" name="author" value={bookData.author} onChange={handleChange} />
         </label>
         <label>
+          Genre:
+          <input type="text" name="genre" value={bookData.genre} onChange={handleChange} />
+        </label>
+        <label>
           Price:
           <input type="text" name="price" value={bookData.price} onChange={handleChange} />
         </label>
         <label>
           Reviews:
-          <input type="number" name="reviews" value={bookData.reviews} onChange={handleChange} />
+          <input type="text" name="reviews" value={bookData.reviews} onChange={handleChange} />
         </label>
         <label>
           Image URL:

@@ -12,8 +12,9 @@
   
   /* Styles for the book details card */
   .book-details-card {
+    margin-top: 30px;
     display: flex;
-    background-color: #fff;
+    background-color: #ad8350;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 800px;

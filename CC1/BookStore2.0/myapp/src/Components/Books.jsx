@@ -62,7 +62,8 @@ function Books() {
               <tbody>
                 {books.map((book, index) => (
                   <tr key={index}>
-                    <td>{book.id}</td>
+                    <th scope="row">{index + 1}</th>
+                    {/* <td>{book.id}</td> */}
                     <td>{book.title}</td>
                     <td>{book.author}</td>
                     <td>{book.genre}</td>

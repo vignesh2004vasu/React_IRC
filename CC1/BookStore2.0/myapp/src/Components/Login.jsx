@@ -7,33 +7,7 @@ import Users from './Users';
 
 export default function Login()
 {
-//   const navigate = useNavigate();
-//   const [data,setData]=useState({
 
-//     username:'',
-//     password:''
-
-//   })
-
-// const log=(e)=>
-// {
-//   e.preventDefault();
-//   const a=localStorage.getItem('uname');
-//   const b=localStorage.getItem('pass');
-//   if(a===data.username && b===data.password)
-//   {
-//           localStorage.setItem('isLoggedIn', true); 
-//           navigate('/home');
-//   }
-//   else
-//       alert('Invalid Credentials');
-// }
-
-//   const HandleChange=(e)=>
-//   {
-//       setData({...data,[e.target.id]:e.target.value})
-
-//   }
 const navigate = useNavigate();
 
     const [user, setUser] = useState({
@@ -64,6 +38,7 @@ const navigate = useNavigate();
           if (foundUser) {
 
             localStorage.setItem('username', user.username);
+            localStorage.setItem('password', user.password);
             
               navigate('/home');
 
@@ -102,7 +77,7 @@ return(
               onChange={onInputChange} />
           <label>Password</label>
         </div>
-        <button href="#" className="button">
+        <button  className="button">
           <span></span>
           <span></span>
           <span></span>
@@ -110,7 +85,7 @@ return(
           Submit
         </button>
       </form>
-      <p><a href="" className="a2">Don't have an account?</a>
+      <p><a  className="a2">Don't have an account?</a>
       <Link to='/register'>
       <a>Sign Up</a>
       </Link>

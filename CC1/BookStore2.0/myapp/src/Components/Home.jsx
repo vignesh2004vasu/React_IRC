@@ -4,6 +4,8 @@ import axios from 'axios';
 import NavHome from "./NavHome";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Loader from "./Loader"; // Assuming Loader is the component for the loading animation
+
 import Footer from './Footer';
 import { selectBook } from './BookSlice';
 import { addToCart } from './CartSlice';
@@ -16,6 +18,7 @@ export default function Home() {
   const searchTerm = useSelector((state) => state.book.searchTerm);
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
+  
 
   useEffect(() => {
     const itemFromLocalStorage = localStorage.getItem('username');
@@ -26,43 +29,47 @@ export default function Home() {
     const fetchBooks = async () => {
       try {
         const response = await axios.get("http://localhost:8080/books");
-        setBooks(response.data || []); // Store all books
-        setFilteredBooks(response.data || []); // Initialize filtered books with all books initially
+        setBooks(response.data || []);
+        setFilteredBooks(response.data || []);
+        
       } catch (error) {
         console.error(error);
+        
       }
     };
     fetchBooks();
   }, []);
 
-  
   useEffect(() => {
-   
     if (books && books.length > 0 && searchTerm) {
       const filtered = books.filter((book) => {
-        const title = book.title ? book.title.toLowerCase() : ''; // Check if title exists
-        const genre = book.genre ? book.genre.toLowerCase() : ''; // Check if genre exists
+        const title = book.title ? book.title.toLowerCase() : '';
+        const genre = book.genre ? book.genre.toLowerCase() : '';
         return title.includes(searchTerm.toLowerCase()) || genre.includes(searchTerm.toLowerCase());
       });
       setFilteredBooks(filtered);
     } else {
-      
       setFilteredBooks(books);
     }
   }, [searchTerm, books]);
 
+
+
   const handleClick = (book) => {
     dispatch(selectBook(book));
-    navigate(`/book/${book.id}`); 
+    navigate(`/book/${book.id}`);
   };
 
   const handleAddToCart = (book) => {
-    dispatch(addToCart(book)); 
+    dispatch(addToCart(book));
   };
+
 
   return (
     <>
       <NavHome />
+
+      
       <div className="home-container">
         <span className="dash">
           <h1>Hello {localStorageItem},</h1>

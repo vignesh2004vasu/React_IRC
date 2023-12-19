@@ -11,24 +11,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f5dd07;
+  background: #ffc800;
   width: 100%;
   max-width: 50vw;
   height: 50vh;
   margin: 20px;
+
   
   border-radius: 10px;
 }
 
 .showcase {
   margin-left: auto;
+  font-size: larger;
 }
 
 .book-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Responsive grid */
   grid-gap: 20px;
-  background: #2f0dca;
+  background: #632303;
   width: 95%;
   max-width: 100%;
   margin: 20px auto;
@@ -39,7 +41,7 @@
 }
 
 .book-item {
-  background: white;
+  background: #ad8350;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
