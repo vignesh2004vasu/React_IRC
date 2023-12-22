@@ -58,13 +58,23 @@ export default function Userdash() {
           </div>
           <div className="user-info">
             <h2>{localStorageItem}</h2>
-            <p>Email: vignesh@gmail.com</p>
-            <p>Location: Coimbatore, France</p>
+            <p>Email:{localStorageItem}@gmail.com</p>
+            <p>Location: Coimbatore, Tamil Nadu</p>
           </div>
         </div>
         <div className='dashitems'>
           <div className='leftitem'>
-            Hello
+            <h1>Favourites</h1>
+            <div className='favitem'>
+            {randomBooks.map((book, index) => (
+                <div key={index} className='book-details'>
+                  <h3>{book.title}</h3>
+                  <p>Author: {book.author}</p>
+                  <p>Price: ${book.price}</p>
+                </div>
+              ))}
+
+            </div>
           </div>
           <div className='rightitem'>
             <div className='prevorder'>

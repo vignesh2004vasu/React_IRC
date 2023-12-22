@@ -71,22 +71,23 @@ function Books() {
                     <td>{book.reviews}</td>
                     <td>
                      
+                     <div className="actionbtn">
                     
                       {authenticated && (
                         <Link
-                          className="btn btn-outline-primary mx-2"
+                          className="btn-primary mx-2"
                           to={`/editbook/${book.id}`}
                         >
                           Edit
                         </Link>
                       )}
-                      {/* Delete button */}
                       <button
-                        className="btn btn-danger mx-2"
+                        className="btn-danger mx-2"
                         onClick={() => deleteBook(book.id)}
                       >
                         Delete
                       </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

@@ -12,6 +12,34 @@
   overflow: hidden;
 }
 
+.ed{
+  margin-left: -30px;
+}
+.edit-user-container {
+  display: flex;
+  margin-top: -120px;
+  margin-left: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif; /* Changed font-family */
+  background-color: white; /* Background color for the entire page */
+}
+
+.edit-user-form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #522508; /* Background color for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
 .login-container {
     width:30vw;
     display:flex;

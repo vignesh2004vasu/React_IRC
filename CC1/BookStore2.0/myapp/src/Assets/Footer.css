@@ -95,7 +95,9 @@ h3{
     }
   }
   
-
+h3{
+  color: white;
+}
   h3:hover{
 
     color: #ff8000;

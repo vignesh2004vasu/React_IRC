@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getUser } from '../services/api'
 
 export default function Users() {
+
+    const [user,setUser] = useState([])
+
+    const fetchData = async()=>{
+
+
+        try{
+            const res = await getUser()
+            setUser(res.data)
+        }
+        catch(e){
+            console.log(e)
+        }
+    }
+    
+    console.log(user)
+    useEffect(()=>{
+        fetchData()
+    },[])
   return (
     <>
     <table>
@@ -21,20 +41,25 @@ export default function Users() {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    VICKY
-                </td>
-                <td>
-                    123
-                </td>
-                <td>
-                    <button>Edit</button>
-                </td>
-                <td>
-                    <button>Delete</button>
-                </td>
-            </tr>
+            {user.map((user)=>(
+               
+                <tr key={user.id}>
+                    <td>
+                        {user.username}
+                    </td>
+                    <td>
+                        {user.password}
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                    </td>
+                    <td>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            ))
+
+            }
         </tbody>
     </table>
     

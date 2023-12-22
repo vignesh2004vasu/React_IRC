@@ -58,6 +58,7 @@
   color: #fff;
   margin-left: 20px;
   margin-right: 20px;
+  text-decoration: none;
 }
 
 /* Style outline button */
@@ -67,6 +68,7 @@
   background-color: transparent;
   margin-left: 20px;
   margin-right: 20px;
+  
 }
 
 /* Style danger button */
@@ -75,4 +77,11 @@
   margin-left: 20px;
   margin-right: 20px;
   color: #fff;
+  padding-inline: 10px;
+  
+}
+
+.actionbtn
+{
+  display: flex;
 }

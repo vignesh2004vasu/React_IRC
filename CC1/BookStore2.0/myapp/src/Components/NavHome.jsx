@@ -13,6 +13,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { setSearchTerm } from './BookSlice';
 import SearchIcon from '@mui/icons-material/Search';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -67,6 +68,9 @@ export default function NavHome() {
           </Link>
           <Link className='homelink' id="homeb" to="/userdash">
             <DashboardIcon fontSize='large'></DashboardIcon>
+          </Link>
+          <Link className='homelink' id="homeb" to="/admin">
+            <SupervisorAccountIcon fontSize='large'></SupervisorAccountIcon>
           </Link>
 
           <Link className='homelink' to="/cart">

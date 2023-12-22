@@ -44,13 +44,14 @@ function EditUser() {
     };
 
     return (
-        <div>
-            <Navbar />
+        <>
+        <Navbar />
+        <div className="edit-user-container">
             <div className="container mt-4">
+                        <h2 className='ed'>Edit User</h2>
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        <h2>Edit User</h2>
-                        <form onSubmit={(e) => onSubmit(e)}>
+                        <form onSubmit={(e) => onSubmit(e)} className="edit-user-form" >
                             <div className="mb-3">
                                 <input
                                     type="text"
@@ -92,6 +93,7 @@ function EditUser() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
