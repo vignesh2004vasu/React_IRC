@@ -14,6 +14,7 @@ import AdminAuth from './Components/AdminAuth';
 import Cart from './Components/Cart';
 import Userdash from './Components/Userdash';
 import Loader from './Components/Loader';
+import Payment from './Components/Payment';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/userdash" element={<Userdash/>}/>
         <Route path="/load" element={<Loader/>}/>
+        <Route path="/pay" element={<Payment/>}/>
         
         
       </Routes>
