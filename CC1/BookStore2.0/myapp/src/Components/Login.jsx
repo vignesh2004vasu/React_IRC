@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import axios from 'axios';
 import Users from './Users';
+// import {toast,ToastContainer} from 'react-toastify'
+// import "react-toastify/dist/ReactToastify.css";
 
 export default function Login()
 {
@@ -39,8 +41,19 @@ const navigate = useNavigate();
 
             localStorage.setItem('username', user.username);
             localStorage.setItem('password', user.password);
+            navigate("/home");
+            // toast.success('Login Successfull', {
+            //   position: "top-right",
+            //   autoClose: 5000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   progress: undefined,
+            //   theme: "light",
+            //   });
+
             
-              navigate('/home');
 
           } else {
 
@@ -56,6 +69,7 @@ return(
 
 <>
 <Navbar/>
+
 <div className="login-box">
       <p>Login</p>
       <br/>

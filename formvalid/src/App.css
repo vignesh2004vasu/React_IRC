@@ -88,13 +88,10 @@ a {
 }
 
 .auth-container {
-  width: 25vw;
-  height:auto;
+  width: 35vw;
+  height:100vh;
   display: flex;
   background-color: #fff;
-  /* background-image: url('https://store-images.s-microsoft.com/image/apps.49800.13718773309227929.bebdcc0e-1ed5-4778-8732-f4ef65a2f445.9ac09d39-064d-466c-81ca-2f1b6f0b95c5?w=200'); */
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,11 +101,12 @@ a {
 }
 
 .h-45v {
-  height: 45vh;
+  height: 100vh;
 }
 
 .h-30v {
-  height: 30vh;
+  height: 70vh;
+
 }
 
 .auth-input {

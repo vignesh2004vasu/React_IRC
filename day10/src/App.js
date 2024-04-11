@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { Store, Store2 } from './Redux/Store';
+import Counter from './components/Counter';
+import ErrorBoundary from './components/ErrorBoundary';
+import Hero from './components/Hero';
+import Inline from './components/Inline';
+import { Provider } from 'react-redux';
+import Theme from './components/Theme';
+import CardB from './components/CardB';
+import PropsData from './components/PropsData';
+import Form from './components/Form';
+
+const dynamicData = new Date().toLocaleString();
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+   
+      {/* <ErrorBoundary>
+        <Hero heroName={'Batman'}/>
+      </ErrorBoundary>
+   
+      <ErrorBoundary>
+        <Hero heroName={'Joker'}/>
+      </ErrorBoundary> */}
+
+      {/* <PropsData staticData={'st data'} dynamicData={dynamicData}/> */}
+
+      {/* <CardB/> */}
+      {/* <Form/> */}
+      <Provider store={Store}>
+      <Counter/>
+      
+      </Provider>
+      <Provider store={Store2}>
+      <Theme/>
+      </Provider>
     </div>
   );
 }

@@ -2,39 +2,50 @@ import { useRef, useState } from 'react'
 
 const NavBar = () => {
     const [visible, setVisible] = useState(false);
-    const username = useRef(null)
-    const password = useRef(null)
+    const username = useRef(null);
+    const password = useRef(null);
+    const confirmpassword = useRef(null);
+
 
     const [errors,setErrors] = useState({
 
       username:'',
-      password:''
+      password:'',
+      confirmpassword: '',
 
     })
 
-    // const [data, setData] = useState({
-    //     username: '',
-    //     password: ''
-    // })
-    // const handleCahnge = (e) => {
-    //     setData({ ...data, [e.target.id]: e.target.value })
-    // }
     const Login = (e) => {
         e.preventDefault();
         const data ={
             username : username.current.value, 
-            password : password.current.value
+            password : password.current.value,
+            confirmpassword : confirmpassword.current.value,
+         
         }
         console.log(data)
 
-        if(errors.username)
+        if(data.password !== data.confirmpassword) {
+            setErrors({ ...errors, password: 'Passwords do not match', confirmpassword: 'Passwords do not match' });
+        } else {
+            setErrors({ ...errors, password: '', confirmpassword: '' });
+        }
+        
 
-        username.current.value =''
-        password.current.value =''
 
-        username.current.focus()
         // alert(data.username + data.password)
+        if(data.username.length ===0) {
+            setErrors({ ...errors, username: 'username is empty' });
+        }
+        else if (data.username.length < 6) {
+            setErrors({ ...errors, username: 'min 6 char' });
+          } 
+           else {
+            setErrors({ ...errors, username: '' });
+          }
     }
+
+   
 
     const toggle = () => {
         setVisible(!visible)
@@ -67,12 +78,28 @@ const NavBar = () => {
                         <form className="auth-container h-30v shadow" onSubmit={Login}>
                             <input type="text" name="" id="username" placeholder="Username" className="auth-input"  ref={username}/>
                             {
-                               errors.username ==''?'' : 
+                               errors.username ===''?'' : 
                                         <span className='error-cmpt'>
                                           {errors.username}
                                         </span>
                             }
-                            <input type="password" name="" id="password" placeholder="Password" className="auth-input"  ref={password}/>
+                           
+                            <input type="text" name="" id="password" placeholder="Password" className="auth-input"  ref={password}/>
+                            {
+                                errors.password ===''?'':
+                                <span className='error-cmpt'>
+                                          {errors.password}
+                                </span>
+
+                            }
+                            <input type="text" name="" id="confirmpassword" placeholder="confirmPassword" className="auth-input"  ref={confirmpassword}/>
+                            {
+                                errors.confirmpassword ===''?'':
+                                <span className='error-cmpt'>
+                                          {errors.confirmpassword}
+                                </span>
+
+                            }
                             <span className='btn-container'>
                                 <input type="submit" value="Login" className="auth-btn w-50" />
                                 <button className='cancel-btn w-50' onClick={toggle}>Cancel</button>
